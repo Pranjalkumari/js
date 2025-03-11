@@ -1,21 +1,38 @@
-//primitives data types    (call by value)
-// 7 - string, number , boolean , null, undefined, symbol, bigInt 
-const x = null    //typeof - object
-console.log(typeof x) 
-// reference(non primitive)--> datatpes of all are object
-//array, objects, functions 
+// //primitives data types    (call by value)
+// // 7 - string, number , boolean , null, undefined, symbol, bigInt 
+// const x = null    //typeof - object
+// console.log(typeof x) 
+// // reference(non primitive)--> datatpes of all are object
+// //array, objects, functions 
 
-const car = ['indica', 'nano']
-//object
-const info= {
-   name: 'pranjal',
-   age: '2'
-}
-//function
-const myfun = function(){
-   console.log('function')
+// const car = ['indica', 'nano']
+// //object
+// const info= {
+//    name: 'pranjal',
+//    age: '2'
+// }
+// //function
+// const myfun = function(){
+//    console.log('function')
+// }
+
+// console.log(typeof car)
+// console.log(typeof myfun)
+// console.log(typeof info)
+
+
+
+//----------------memory---------------------------------
+//stack memory use for - primitive  (change in copy )
+//heap - non primitive  ( reference)
+
+let a = 23;
+let b= a;
+a= 20; //change only  not b because b take the copy of a and we are changing in a 
+const x= {
+    name: 'pk'
 }
 
-console.log(typeof car)
-console.log(typeof myfun)
-console.log(typeof info)
+const y = x;
+x.name = 'kk'// chnage in both x and y because both are referencing same memory location
+console.log([x,y,a,b])
