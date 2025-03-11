@@ -1,0 +1,21 @@
+//primitives data types    (call by value)
+// 7 - string, number , boolean , null, undefined, symbol, bigInt 
+const x = null    //typeof - object
+console.log(typeof x) 
+// reference(non primitive)--> datatpes of all are object
+//array, objects, functions 
+
+const car = ['indica', 'nano']
+//object
+const info= {
+   name: 'pranjal',
+   age: '2'
+}
+//function
+const myfun = function(){
+   console.log('function')
+}
+
+console.log(typeof car)
+console.log(typeof myfun)
+console.log(typeof info)
