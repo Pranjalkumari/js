@@ -45,38 +45,57 @@ dress.forEach(element => {
 });
 
 //function
-dress.forEach(function(item){// does not write name of the funtion
-    console.log(item);
-})
+// dress.forEach(function(item){// does not write name of the funtion
+//     console.log(item);
+// })
 
-//arrow function
-dress.forEach((item)=>{
-    console.log(item);
-})
+// //arrow function
+// dress.forEach((item)=>{//call back
+//     console.log(item);
+// })
 
-//coding.forEach( (item, index, arr)=> {// also pass the index and array in parameter
-    //     console.log(item, index, arr);
-    // } )
+// //coding.forEach( (item, index, arr)=> {// also pass the index and array in parameter
+//     //     console.log(item, index, arr);
+//     // } )
 
 
 
-//======================access object by foreach===================
-const myCoding = [
-    {
-        languageName: "javascript",
-        languageFileName: "js"
-    },
-    {
-        languageName: "java",
-        languageFileName: "java"
-    },
-    {
-        languageName: "python",
-        languageFileName: "py"
-    },
-]
+// //======================access object by foreach===================
+// const myCoding = [
+//     {
+//         languageName: "javascript",
+//         languageFileName: "js"
+//     },
+//     {
+//         languageName: "java",
+//         languageFileName: "java"
+//     },
+//     {
+//         languageName: "python",
+//         languageFileName: "py"
+//     },
+// ]
 
-myCoding.forEach( (item) => {
+// myCoding.forEach( (item) => {
     
-    console.log(item.languageName);
-} )
+//     console.log(item.languageName);
+// } )
+
+
+
+//foreach does not return anything so we use filter 
+
+const num = [2,4,5,7,9,0]
+//nst val = num.filter((num)=> num>4)
+//nsole.log(val)
+
+// start scop then , we have to use return keyword
+const val = num.filter((num)=>{ 
+   return num>4}
+)
+console.log(val)
+//we can do same with foreach but by using if condition 
+
+
+
+//map , chaning , reduce etc..
