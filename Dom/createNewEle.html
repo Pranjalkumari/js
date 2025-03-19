@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create new element | DOM</title>
+</head>
+<body style="background-color: aquamarine; color: #000;">
+    <div class="parent">
+        <div class="day">sun</div>
+        <div class="day">mon</div>
+        <div class="day">tue</div>
+        <div class="day">wed</div>
+    </div>
+    
+</body>
+  <script>
+      const parent  = document.querySelector('.parent')
+      console.log(parent)
+      console.log(parent.children)// html collection (array like element /property)
+    console.log(parent.children[1].innerHTML)
+    //array like , so we can use loop 
+    // for (let index = 0; index < parent.children.length; index++) {
+    //  console.log(parent.children[index])
+        
+    // }
+
+    // get parent from child
+
+    const child = document.querySelector('.day')
+    
+    console.log(child.parentElement)
+    console.log(child.childElementCount)
+    console.log(child.nextSibling)
+    console.log(child)
+    console.log(child.nextElementSibling)
+
+    //tree like structure -  
+    console.log("nodes", parent.childNodes)//total nodes-9
+</script>
+</html>
