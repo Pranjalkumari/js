@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit and remove element</title>
+</head>
+<body style="color: rgb(204, 231, 222); background-color: black;">
+    <ul class="language">
+        <li>java</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(langName)
+    {
+        const li = document.createElement('li')
+        li.innerHTML= `${langName}`//we have to traverse whole tree - not optimize for comlpex
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('c++')
+    addLanguage('mern')
+
+
+    function addlan(langName)
+    {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addlan("second method")
+
+
+    //edit
+    const secondLan =document.querySelector('li:nth-child(2)')
+    //secondLan.innerHTML = " chanege"//not optimize
+    //secondLan.outerHTML = '<li>change</li>'
+    const newNode = document.createElement('li')
+     newNode.textContent = "replace node"
+     secondLan.replaceWith(newNode)
+
+
+     //remove 
+     const lastLan = document.querySelector('li:last-child')
+     lastLan.remove()
+</script>
+</html>
