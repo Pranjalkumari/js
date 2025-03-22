@@ -9,7 +9,8 @@ buttons.forEach(function (button) {
     console.log(e);
     console.log(e.target);
     if(e.target.id === 'grey'){
-        body.style.backgroundColor = e.target.id;
+       e.target.style.backgroundColor= 'blue'// chnage button backgrnd color 
+        e.target.style.color = 'black'//change the text color
     }
     if(e.target.id === 'yellow'){
         body.style.backgroundColor = 'red';
