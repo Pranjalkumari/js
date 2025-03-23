@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>project</title>
+</head>
+<body>
+    <h1>chnage in 2sec </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+</body>
+<script>
+//----------------------------//
+    // const name = function(){
+    //     console.log("pranjal");
+
+    // }
+    // setTimeout(name,3000)
+
+
+    //------------------------//
+    // const h1 = document.querySelector('h1');
+    // const change = setTimeout(() => {
+       
+    //     h1.innerHTML = 'I am change now'
+    // }, 4000);
+
+    //-------how we can stop--------//
+    // document.querySelector('#stop').addEventListener('click',function(){
+    //    clearTimeout(change);
+    // })
+
+
+
+    //----------setInterval-----------//
+    const date = function(str){
+        console.log(str,Date.now())
+    }
+
+    
+    // const inetervalId = setInterval(date,1000,"print every sec")
+    //  clearInterval(inetervalId)// for stoping
+let intervalId;
+    document.getElementById('start').addEventListener('click', function(){
+         intervalId = setInterval(date,1000,"print every sec")
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalId);
+    })
+
+</script>
+</html>

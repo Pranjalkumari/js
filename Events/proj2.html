@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project02</title>
+</head>
+<body style="background-color: black; color: #fff;">
+    <div >
+        <div style="display: flex; align-items: center; justify-content: center; height: 10cm;">
+            <h1 id="insert" >Press a key and the table will appear</h1>
+        </div>
+    </div>
+</body>
+<script>
+    const insert = document.getElementById('insert');
+
+    window.addEventListener('keydown', function(e) {
+        insert.innerHTML = 
+        `<div class="color"> 
+            <table border="1">
+                <tr>
+                    <th>Key</th>
+                    <th>Key Code</th>
+                    <th>Code</th>
+                </tr>
+                <tr>
+                    <td>${e.key ===' ' ?'space':e.key}</td>
+                    <td>${e.keyCode || e.which}</td>
+                    <td>${e.code}</td>
+                </tr>
+            </table>
+        </div>`;
+    });
+</script>
+</html>
