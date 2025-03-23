@@ -1,0 +1,37 @@
+Asynchronous JavaScript Fundamentals 🚀
+In JavaScript, asynchronous programming allows us to execute tasks without blocking the main thread. This is important for tasks like fetching data, reading files, or handling timers.
+
+1️⃣ Synchronous vs. Asynchronous JavaScript
+Synchronous JavaScript (Blocking)
+By default, JavaScript is single-threaded, meaning it executes one task at a time. If a task takes too long, it blocks the execution of other tasks.
+Example:
+
+js
+Copy
+Edit
+console.log("Start");
+for (let i = 0; i < 5e9; i++) {} // Heavy computation (blocks execution)
+console.log("End");
+⏳ If the loop takes 5 seconds, nothing else can run during that time!
+
+Asynchronous JavaScript (Non-Blocking)
+Asynchronous code doesn’t block execution. Instead, JavaScript delegates tasks to the browser (or Node.js) and moves to the next task.
+Example:
+
+js
+Copy
+Edit
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Inside setTimeout");
+}, 2000); // Runs after 2 seconds
+
+console.log("End");
+
+How JavaScript Handles Async Code? (Event Loop Concept)
+JavaScript uses Web APIs, the Callback Queue, and the Event Loop to manage asynchronous tasks.
+
+🔹 Web APIs: The browser handles async tasks like setTimeout, fetch, and DOM events.
+🔹 Callback Queue: Stores completed async tasks and waits for execution.
+🔹 Event Loop: Keeps checking if the main thread is free, then pushes queued tasks for execution.
