@@ -1,0 +1,98 @@
+<!-- types of events 
+ 1.mouse event (click, dbclick, mouseover, mouseout)
+ 2.keybord events (keydown, keyup)
+ 3.form event(focus,change, submit)
+ 4.window event(resize,load) -->
+
+<!-- 
+ 
+  type, timestamp, defaultPrevented
+  target, toElement, srcElement, currentTarget,
+  clientX, clientY, screenX, screenY
+  altkey, ctrlkey, shiftkey, keyCode -->
+
+<!-- 
+Event Handaling -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body >
+   <ul>
+    <!-- <li id="pic"><img src="../hhh.jpg" alt="" onclick="alert('clicked')" style="height: 5cm;"></li> -->
+     <li id="pic"><img src="../hhh.jpg" alt=""  style="height: 5cm;"></li>
+    <!-- Not recommended because it mixes HTML and JavaScript. -->
+
+    
+   </ul>
+   <div id="parent">
+    <button id="child">here</button>
+    <a href="https://google.com" id="myLink">Click me</a>
+  </div>
+</body>
+<script>
+    //using javascript property
+    //  document.getElementById('pic').onclick= function(){
+    //     alert("clicked")
+    //  }
+
+    // best approach addEventListener() :   Can add multiple event listeners to the same element,Can remove event listeners if needed.
+
+
+
+
+    const pic = document.getElementById('pic')
+    pic.addEventListener('click', function(e){
+  alert("clicked")
+  console.log(e);
+    },false)
+
+    //EventPropogation(Bubbling & Capturing)
+    // Bubbling Phase (default) → Event starts from the clicked element and moves up to the parent elements.
+
+//Capturing Phase → Event starts from the top (document) and moves down to the clicked element
+
+
+
+document.getElementById('parent').addEventListener('click',function(e){
+    alert('parent clicked')
+});
+
+
+document.getElementById('child').addEventListener('click', (e)=>{
+    alert("child clicked")  // here bubbling haapens
+    e.stopPropagation();// stop bubbling
+})
+
+
+//Prevent Default
+document.getElementById("myLink").addEventListener("click", function (event) {
+    event.preventDefault(); // Stops the link from opening
+    alert("Default action prevented!");
+  });
+
+
+  //remove
+//    document.getElementById('child').addEventListener('click', function(e){
+//       console.log(e.target.tagName);
+//       if(e.target.tagName === 'BUTTON'){
+//         console.log(e.target.id)
+//         let removeIt = e.target.parentNode
+//         removeIt.remove();
+//       }
+
+//    })
+   document.getElementById('parent').addEventListener('click', function(e){
+      console.log(e.target.tagName);
+      if(e.target.tagName === 'DIV'){
+        console.log(e.target.id)
+        let removeIt = e.target.childNode
+        removeIt.remove();
+      }
+
+   })
+</script>
+</html>
