@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Layout</title>
+
+    <style>
+        body {
+            background-color: rgb(52, 51, 51);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(236, 189, 127);
+            width: 100px;
+            height: 100px;
+            border: solid black 2px;
+            background-color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+    
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <span class="button" id="red">red</span>
+        <span class="button" id="yellow">yellow</span>
+        <span class="button" id="blue">blue</span>
+        <span class="button" id="green">green</span>
+        <span class="button" id="pink">pink</span>
+        <span class="button" id="orange">orange</span>
+        <span class="button" id="black">black</span>
+        <span class="button" id="red">red</span>
+        <span class="button" id="purple">X</span>
+    </div>
+    
+    <h2 style="position: absolute; top: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+        Press X to reset the boxes' color
+    </h2>
+
+  
+
+    <script>
+        let store=[];
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.button');
+
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    console.log(e.target);
+                    const color = e.target.id; 
+                   
+                    if(e.target.id ==='purple')
+                {
+                    // if(store.length>0){
+                    //    const last = store.pop();
+                    //    last.style.backgroundColor = '#fff'
+                    // }
+
+                    let interval = setInterval(() => {
+                        if (store.length > 0) {
+                            const lastButton = store.pop();
+                            lastButton.style.backgroundColor = '#fff'; 
+                        } else {
+                            clearInterval(interval); 
+                        }
+                    }, 1000);
+                       
+                         
+                    
+                }else{
+                    e.target.style.backgroundColor = color; 
+                    store.push(e.target);
+                }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
